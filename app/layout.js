@@ -1,7 +1,18 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import Link from 'next/link'
+import '../styles/globals.css'
+
+export function Titre(){
+
+  return (
+    <div className="flex flex-col items-center justify-center my-8 pt-8 pb-8 bg-slate-800 max-w-3xl mx-auto rounded-md">
+      <Link href="/">
+        <h1 className="text-4xl font-bold text-white">It&apos;s WGLINT Blog</h1>
+      </Link>
+      <p className='text-slate-300' > 🖐️ Welcome in my blog post 🤚 </p>
+    </div>
+  )
+}
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +22,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Titre />
+        <div className='max-w-3xl  mx-auto px-6'>
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
